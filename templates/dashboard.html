@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard {% endblock title %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<section class="m-5">
+    <div class="w-75 shadow p-5 mx-auto">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h2 class="text-center">Instructions</h2>
+            <div class="text-left">
+            <p>
+                1. Check your camera and microphone.<br>
+                2. Find a quiet, well-lit location.<br>
+                3. Position yourself in front of the camera.<br>
+                4. Look directly into the camera.<br>
+                5. Stay on topic and be respectful.<br>
+                6. Keep your feedback concise.<br>
+                7. Check your background.<br>
+                8. Review before submission.<br>
+                9. Follow the provided submission instructions.
+            </p>
+        
+            <div class="text-center">
+                <a class="btn btn-primary" href="feedback">Open Camera and Fill Feedback Form</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endif %}
+{% endblock body %}

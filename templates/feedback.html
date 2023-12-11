@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block title %}Feedback{% endblock title %}
+{% block body %}
+
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="card mb-2">
+        
+        <div class="row col-10 m-auto mt-5">
+            <div class="video-container">
+                <img id="video-stream" src='video_feed'>
+            </div>
+            <p class="text-end mt-5">Name: <span><b>{{fname}} {{lname}}</b>  </span> </p>
+            <h1 class="mt-4 mb-4">Exam</h1>
+            <hr>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row col-lg-10 m-auto mt-2">
+                <div class="col-lg-6">
+                    <div class="col-10 m-2 ">
+                        <label for="fname">
+                            <h5>1. How would you rate your overall mood and level of happiness?
+                            </h5>
+                        </label>
+                        {{form.q1}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="lname">
+                            <h5>2. How often do you experience feelings of sadness or emptiness?</h5>
+                        </label>
+                        {{form.q2}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="email">
+                            <h5>3. Rate the extent to which you have lost interest or pleasure in activities that you used to enjoy.
+                            </h5>
+                        </label>
+                        {{form.q3}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>4. How would you rate your energy levels and motivation?
+                            </h5>
+                        </label>
+                        {{form.q4}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>5. Rate the severity of your appetite changes (e.g., significant decrease or increase).
+                            </h5>
+                        </label>
+                        {{form.q5}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>6. How would you rate your ability to concentrate and make decisions?
+                            </h5>
+                        </label>
+                        {{form.q6}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>7. Rate the extent to which you experience feelings of worthlessness or excessive guilt.
+                            </h5>
+                        </label>
+                        {{form.q7}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>8. How often do you have thoughts of death or dying?
+                            </h5>
+                        </label>
+                        {{form.q8}}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>9. How would you rate your sleep quality and patterns? </h5>
+                        </label>
+                        {{form.q9}}
+                    </div>
+
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>10. Rate the frequency of any physical symptoms you experience (e.g., headaches, stomachaches).</h5>
+                        </label>
+                        {{form.q10}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>11. How would you rate your level of irritability or restlessness?</h5>
+                        </label>
+                        {{form.q11}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>12. Rate the severity of any changes in your weight (e.g., significant weight loss or gain).</h5>
+                        </label>
+                        {{form.q12}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>13. How often do you feel anxious or worried?
+                            </h5>
+                        </label>
+                        {{form.q13}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>14. How would you rate your overall level of stress?
+
+                            </h5>
+                        </label>
+                        {{form.q14}}
+                    </div>
+                    <div class="col-10 m-2">
+                        <label for="password">
+                            <h5>15. Rate the extent to which you have lost interest in socializing or spending time with others.
+                            </h5>
+                        </label>
+                        {{form.q15}}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row col-1 m-auto mt-3 mb-3">
+                <button type="submit" class="btn btn-outline-dark btn-lg">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock body %}
